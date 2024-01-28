@@ -26,7 +26,7 @@ public class Item {
     @Column(name = "qtyOnHand", nullable = false)
     private double unitPrice;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "itemCategory",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    List<Item> items;
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "itemCategory",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+//    List<Item> items;
 }

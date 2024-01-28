@@ -20,8 +20,8 @@ public class ItemCategory {
     @Column(name = "categoryName", length = 50, nullable = false)
     private String categoryName;
 
-    @ManyToOne
-    @JoinColumn(name = "itemId",nullable = false)
-    private ItemCategory itemCategory;
+//    @ManyToOne
+//    @JoinColumn(name = "itemId",nullable = false)
+//    private ItemCategory itemCategory;
 
 }
