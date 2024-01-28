@@ -37,7 +37,7 @@ public class AuthController {
 
     @PostMapping("/auth/signup")
     public ResponseEntity<?> postMethodName(@RequestBody User user) {
-        if(userRepository.existsByUsername(user.getUserName())){
+        if(userRepository.existsByUsername(user.getUsername())){
             return ResponseEntity.badRequest().body("Username already exists");
         }
         if(userRepository.existsByEmail(user.getEmail())){
@@ -45,7 +45,7 @@ public class AuthController {
         }
 
         User newUser =new User();
-        newUser.setUserName(user.getUserName());
+        newUser.setUsername(user.getUsername());
         newUser.setEmail(user.getEmail());
         newUser.setPassword(passwordEncoder.encode(user.getPassword()));
 
