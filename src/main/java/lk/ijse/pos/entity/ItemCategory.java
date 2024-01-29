@@ -1,27 +1,20 @@
 package lk.ijse.pos.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+import java.util.List;
+
 @Entity
 public class ItemCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "catId")
-    private Long categoryId;
+    @Column(name = "cat_Id")
+    private Long id;
+    @Column(name = "cat_Name", nullable = false)
+    private String name;
 
-    @Column(name = "categoryName", length = 50, nullable = false)
-    private String categoryName;
-
-//    @ManyToOne
-//    @JoinColumn(name = "itemId",nullable = false)
-//    private ItemCategory itemCategory;
-
+    @JsonIgnore
+    @OneToMany(mappedBy = "category",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Item> products;
 }
