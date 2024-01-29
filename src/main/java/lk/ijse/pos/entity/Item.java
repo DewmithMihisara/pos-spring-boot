@@ -6,25 +6,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "itemId")
-    private Long itemId;
-
-    @Column(name = "itemName", length = 50, nullable = false)
-    private String itemName;
-
-    @Column(name = "qtyOnHand", nullable = false)
+    private Long code;
+    @Column(name = "unitPrice", nullable = false)
     private double unitPrice;
-
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "itemCategory",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-//    List<Item> items;
+    @Column(name = "qtyOnHand", nullable = false)
+    private int qtyOnHand;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private ItemCategory category;
 }
