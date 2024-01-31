@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ItemDTO {
     private Long id;
-    private String description;
+    private String name;
+    private Long cat_id;
     private double unitPrice;
     private int qtyOnHand;
 }
