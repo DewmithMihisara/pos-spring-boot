@@ -28,7 +28,7 @@ public class CustomerController {
             return ResponseEntity.status(500).body(e.getMessage());
         }
     }
-    @PostMapping("/customersAdd")
+    @PostMapping("/customers")
     public ResponseEntity<?> saveCustomer(@RequestBody Customer customer){
         try {
             return ResponseEntity.status(201).body(customerService.saveCustomer(new CustomerDTO(customer.getCusId(),customer.getName(),customer.getAddress(),customer.getSalary())));
