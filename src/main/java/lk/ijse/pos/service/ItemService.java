@@ -12,4 +12,5 @@ public interface ItemService {
     Item saveItem(ItemDTO itemDTO);
     Item updateItem(ItemDTO itemDTO);
     Item deleteItem(Long id);
+    List<Item> getItemByCategory(Long id);
 }
