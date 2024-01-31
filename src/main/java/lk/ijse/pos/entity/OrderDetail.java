@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
+//@Entity
 public class OrderDetail {
     @EmbeddedId
     private OrderDetailId id;
